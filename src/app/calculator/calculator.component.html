@@ -1,0 +1,45 @@
+
+
+<div class="calculator">
+
+
+  <input type="text" class="calculator-screen"  [value]="currentNumber" disabled
+
+         [ngClass]="{XXLfont:currentNumber.length  <= 7,
+                     XLfont:currentNumber.length  > 7 && currentNumber.length  < 11,
+                     Lfont:currentNumber.length >=11 && currentNumber.length <14,
+                     Mfont:currentNumber.length >=14 && currentNumber.length <18,
+                     Sfont:currentNumber.length >= 18 && currentNumber.length <22,
+                     XSfont:currentNumber.length >=22 && currentNumber.length <27,
+                     XXSfont:currentNumber.length >=27 && currentNumber.length <35,
+                     XXXSfont:currentNumber.length >=35
+         }"  >
+
+
+  <div class="calculator-keys">
+    <button type="button" (click) = "clear()"  class="function-keys" value="all-clear">{{ clearButton }}</button>
+    <button type="button" (click) = "toggleSign()" class="function-keys" value="posi">±</button>
+    <button type="button" (click) = "makePercent()" class="function-keys" value="posi">%</button>
+    <button type="button" (click) = "makeOperation('/')" class="operator-keys" value="/">&divide;</button>
+    <button type="button" (click) = "setNumber('7')" value="7" >7</button>
+    <button type="button" (click) = "setNumber('8')" value="8">8</button>
+    <button type="button" (click) = "setNumber('9')" value="9">9</button>
+    <button type="button" (click) = "makeOperation('*')" class="operator-keys" value="*">&times;</button>
+
+    <button type="button" (click) = "setNumber('4')" value="4">4</button>
+    <button type="button" (click) = "setNumber('5')" value="5">5</button>
+    <button type="button" (click) = "setNumber('6')" value="6">6</button>
+    <button type="button" (click) = "makeOperation('-')" class="operator-keys" value="-">-</button>
+    <button type="button" (click) = "setNumber('1')" value="1">1</button>
+    <button type="button" (click) = "setNumber('2')" value="2">2</button>
+    <button type="button" (click) = "setNumber('3')" value="3">3</button>
+    <button type="button" (click) = "makeOperation('+')" class="operator-keys" value="+">+</button>
+
+    <button type="button" (click) = "setNumber('0')" value="0" class="zero-button">0</button>
+    <button type="button" (click) = "makeDecimal()" class="decimal" value="." >●</button>
+    <button type="button" (click) = "makeOperation('=')" class="equal-sign" value="=">=</button>
+
+
+
+  </div>
+</div>
